@@ -108,7 +108,9 @@ whichDeferred.promise
     if (process.platform === 'linux' && process.arch === 'x64') {
       downloadUrl += 'u1404-x86_64.zip'
     } else if (process.platform === 'darwin' || process.platform === 'openbsd' || process.platform === 'freebsd') {
-      downloadUrl += 'macosx.zip'
+      downloadUrl = 'https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.0.0-macosx.zip'
+    } else if (process.platform === 'win32') {
+      downloadUrl = 'https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.0.0-windows.zip';
     } else {
       console.error('Unexpected platform or architecture:', process.platform, process.arch)
       exit(1)
